@@ -24,7 +24,7 @@ Uma skill é uma habilidade específica do agente, descrita em um guia passo a p
 
 *Analogia:* são as receitas de um cozinheiro. Cada receita é uma skill para preparar um prato específico.
 
-O DIO Agent tem três skills: plano de estudos, destravar desafio e explicar conceito.
+O DIO Agent Security possui seis skills oficiais: `study-plan` (plano de estudos), `unblock-challenge` (destravar desafio), `explain-concept` (explicar conceito), `web-search` (pesquisa na web), `portfolio-review` (revisão de portfólio) e `vulnerability-analysis` (análise de vulnerabilidades e DevSecOps).
 
 ## Repositório
 
@@ -57,3 +57,28 @@ Contexto é tudo o que o agente "sabe" durante a conversa: as instruções dele,
 LLM vem de "Large Language Model", ou Modelo de Linguagem de Grande Escala. É a tecnologia de IA que entende e gera texto, e que está por trás do agente.
 
 *Analogia:* é o "cérebro" que processa linguagem. O harness é o corpo, o LLM é o cérebro, e o AGENTS.md diz a esse cérebro qual papel exercer.
+
+## Hardening
+
+Hardening (endurecimento ou blindagem) é o processo de mapear e reduzir a superfície de ataque de um servidor, aplicação ou sistema operacional, fechando portas desnecessárias, configurando firewalls e restringindo privilégios.
+
+*Analogia:* trancar portas e janelas de uma casa e instalar travas de segurança antes de colocar objetos de valor dentro dela.
+
+## Vulnerabilidade vs. Risco
+
+- **Vulnerabilidade:** A falha técnica no código ou configuração (ex: concatenação direta em SQL, CWE-89).
+- **Risco:** A probabilidade real de que uma ameaça explore essa falha multiplicada pelo impacto nos negócios ($\text{Risco} = \text{Probabilidade} \times \text{Impacto}$). Um código com SQLi isolado em localhost tem risco drasticamente menor do que o mesmo código exposto na internet pública em um servidor com dados sensíveis.
+
+## sqlite3.OperationalError vs. SyntaxError
+
+- **SyntaxError (Python):** Erro do interpretador da linguagem ao ler o script Python (ex: parêntese não fechado).
+- **sqlite3.OperationalError (Banco de Dados):** Erro do motor do banco de dados ao tentar processar um comando SQL malformado (ex: aspas desbalanceadas por uma entrada com apóstrofo como `d'angelo`). O script Python em si está sintaticamente correto, mas o banco rejeita a gramática SQL.
+
+## Paginação Segura (CWE-400)
+
+Prática defensiva de limitar e validar os parâmetros `page` e `limit` em consultas ao banco de dados, impondo limites máximos rígidos para evitar que requisições abusivas causem Negação de Serviço (DoS) por consumo excessivo de memória ou processamento.
+
+## CVSS Hipotético vs. Risco Residual
+
+- **CVSS Hipotético:** Uma estimativa de severidade de pior cenário (*worst-case scenario*), calculada com premissas explícitas (ex.: assumindo exposição direta na internet e dados confidenciais).
+- **Risco Residual:** O risco que permanece após a aplicação de mitigações (ex: Prepared Statements). Ele é avaliado de forma fundamentada e qualitativa, nunca sendo arbitrariamente zerado como "CVSS 0.0".

@@ -1,0 +1,23 @@
+test_legitimate_authentication_failure_wrong_password (lab.test_lab.TestSQLInjectionLab.test_legitimate_authentication_failure_wrong_password)
+Garante que senhas incorretas são rejeitadas em ambas as versões. ... ok
+test_legitimate_authentication_success (lab.test_lab.TestSQLInjectionLab.test_legitimate_authentication_success)
+Garante que credenciais válidas funcionam tanto na versão vulnerável quanto na segura. ... ok
+test_legitimate_input_with_apostrophe_fails_in_vulnerable (lab.test_lab.TestSQLInjectionLab.test_legitimate_input_with_apostrophe_fails_in_vulnerable)
+Mostra que a concatenação de strings quebra funcionalidades legítimas: ... ok
+test_legitimate_input_with_apostrophe_succeeds_in_secure (lab.test_lab.TestSQLInjectionLab.test_legitimate_input_with_apostrophe_succeeds_in_secure)
+Mostra que Prepared Statements preservam a integridade e suportam ... ok
+test_sqli_auth_bypass_fails_in_secure (lab.test_lab.TestSQLInjectionLab.test_sqli_auth_bypass_fails_in_secure)
+Comprova a eficácia da mitigação defensiva: ... ok
+test_sqli_auth_bypass_succeeds_in_vulnerable (lab.test_lab.TestSQLInjectionLab.test_sqli_auth_bypass_succeeds_in_vulnerable)
+Comprova a vulnerabilidade CWE-89: ... ok
+test_sqli_boolean_or_bypass_fails_in_secure (lab.test_lab.TestSQLInjectionLab.test_sqli_boolean_or_bypass_fails_in_secure)
+Testa o padrão clássico ' OR '1'='1' --. ... ok
+test_sqli_union_data_leak_in_vulnerable (lab.test_lab.TestSQLInjectionLab.test_sqli_union_data_leak_in_vulnerable)
+Comprova extração não autorizada de dados (quebra de Confidencialidade): ... ok
+test_sqli_union_data_leak_prevented_in_secure (lab.test_lab.TestSQLInjectionLab.test_sqli_union_data_leak_prevented_in_secure)
+Comprova que na busca com query parametrizada o UNION SELECT não é executado, ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+OK
