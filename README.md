@@ -8,6 +8,47 @@ Ele opera sob o padrão aberto **`AGENTS.md`**, funcionando de forma nativa e id
 
 ---
 
+## 📸 Evidências Práticas e Testes
+
+Esta seção apresenta as evidências visuais das execuções do **DIO Agent Security**, demonstrando na prática o funcionamento dos testes automatizados, a interação com o mentor em cenários reais de AppSec/DevSecOps e o rigor técnico na avaliação de riscos.
+
+### 1. Execução dos Testes Automatizados no Terminal
+Comprovação da suíte de 9 testes unitários em Python (`unittest`), validando a neutralização de SQL Injection (CWE-89) e o funcionamento de Prepared Statements.
+
+![Testes Automatizados Unitários](docs/evidencias/print-01-testes-unitarios.png)
+
+### 2. Estrutura Modular do Projeto na IDE
+Visualização da arquitetura do repositório baseada no padrão aberto `AGENTS.md`, integrando bases de conhecimento, skills defensivas e laboratório prático.
+
+![Estrutura do Projeto](docs/evidencias/print-02-estrutura-projeto.png)
+
+### 3. Auditoria Didática de SQL Injection e Causa Raiz
+Identificação pedagógica da injeção de SQL via concatenação direta, diferenciando erro de sintaxe do motor de banco (`sqlite3.OperationalError`) de erros da linguagem de programação.
+
+![Análise Didática de SQL Injection](docs/evidencias/print-03-roteiro-sqli.png)
+
+### 4. Validação de Prepared Statements e Emissão de Relatório DevSecOps
+Orientação da mitigação definitiva com consultas parametrizadas e emissão do Relatório Padronizado de Auditoria DevSecOps com mapeamento de padrões (CWE, OWASP).
+
+![Validação e Relatório DevSecOps](docs/evidencias/print-04-roteiro-correcao-relatorio.png)
+
+### 5. Protocolo Pedagógico de Hardening em Servidor Nuvem
+Mentoria em segurança de infraestrutura com perguntas de contexto (uma por vez) antes de diagnósticos, esclarecendo a diferença entre escuta local e exposição pública.
+
+![Protocolo Pedagógico de Hardening](docs/evidencias/print-05-roteiro-ubuntu-contexto.png)
+
+### 6. Mitigação de DoS com Paginação Segura (CWE-400)
+Aplicação de paginação defensiva com validação estrita de tipos e limites rígidos (`limit` e `offset`) parametrizados, prevenindo exaustão de recursos e ataques DoS.
+
+![Paginação Segura contra DoS](docs/evidencias/print-06-sqli-paginacao.png)
+
+### 7. Avaliação Hipotética de Risco e Análise de CVSS
+Demonstração de avaliação hipotética de risco fundamentada no pior cenário (*worst-case*), mantendo o compromisso técnico de avaliar o risco residual sem atribuir CVSS 0.0 de forma automática.
+
+![Avaliação Hipotética de Risco e CVSS](docs/evidencias/print-07-evidencias-cvss.png)
+
+---
+
 ## 🏗️ Arquitetura do Agente
 
 O projeto é estruturado de forma desacoplada, transparente e modular:
