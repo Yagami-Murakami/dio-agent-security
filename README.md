@@ -10,43 +10,44 @@ Ele opera sob o padrão aberto **`AGENTS.md`**, funcionando de forma nativa e id
 
 ## 📸 Evidências Práticas e Testes
 
-Esta seção apresenta as evidências visuais das execuções do **DIO Agent Security**, demonstrando na prática o funcionamento dos testes automatizados, a interação com o mentor em cenários reais de AppSec/DevSecOps e o rigor técnico na avaliação de riscos.
+As capturas abaixo registram a execução de testes automatizados no laboratório e respostas reais do agente em conversas de estudo. **Uma recomendação de código mostrada no chat não equivale à execução ou validação desse código.**
 
 ### 1. Execução dos Testes Automatizados no Terminal
-Comprovação da suíte de 9 testes unitários em Python (`unittest`), validando a neutralização de SQL Injection (CWE-89) e o funcionamento de Prepared Statements.
+Captura do terminal com **9 testes unitários aprovados** no laboratório Python/SQLite, abrangendo autenticação, SQL Injection, consultas parametrizadas e entradas legítimas com apóstrofos.
 
 ![Testes Automatizados Unitários](docs/evidencias/print-01-testes-unitarios.png)
 
-### 2. Estrutura Modular do Projeto na IDE
-Visualização da arquitetura do repositório baseada no padrão aberto `AGENTS.md`, integrando bases de conhecimento, skills defensivas e laboratório prático.
+### 2. Estrutura de Arquivos do Projeto
+Registro da organização do repositório, com `AGENTS.md`, bases de conhecimento, skills, documentação e laboratório Python.
 
 ![Estrutura do Projeto](docs/evidencias/print-02-estrutura-projeto.png)
 
-### 3. Auditoria Didática de SQL Injection e Causa Raiz
-Identificação pedagógica da injeção de SQL via concatenação direta, diferenciando erro de sintaxe do motor de banco (`sqlite3.OperationalError`) de erros da linguagem de programação.
+### 3. Identificação Didática de SQL Injection
+Trecho da conversa em que o agente identifica **CWE-89 (SQL Injection)** na função `buscar(termo)` e explica como a interpolação de entradas em uma consulta pode alterar sua estrutura SQL.
 
 ![Análise Didática de SQL Injection](docs/evidencias/print-03-roteiro-sqli.png)
 
-### 4. Validação de Prepared Statements e Emissão de Relatório DevSecOps
-Orientação da mitigação definitiva com consultas parametrizadas e emissão do Relatório Padronizado de Auditoria DevSecOps com mapeamento de padrões (CWE, OWASP).
+### 4. Proposta de Correção e Recomendações DevSecOps
+Exemplo de **código corrigido sugerido pelo agente**, com consulta parametrizada e paginação, acompanhado de recomendações sobre análise estática (SAST) e menor privilégio. Esta captura **não demonstra que essa versão foi executada ou aprovada em testes**.
 
-![Validação e Relatório DevSecOps](docs/evidencias/print-04-roteiro-correcao-relatorio.png)
+![Proposta de Correção e Recomendações DevSecOps](docs/evidencias/print-04-roteiro-correcao-relatorio.png)
 
-### 5. Protocolo Pedagógico de Hardening em Servidor Nuvem
-Mentoria em segurança de infraestrutura com perguntas de contexto (uma por vez) antes de diagnósticos, esclarecendo a diferença entre escuta local e exposição pública.
+### 5. Orientação de Hardening em Cenário de Laboratório
+Conversa sobre um servidor Ubuntu hipotético na nuvem: o agente diferencia escuta local de exposição pública, alerta para o risco de perda do acesso SSH e faz uma pergunta de contexto antes de sugerir comandos.
 
 ![Protocolo Pedagógico de Hardening](docs/evidencias/print-05-roteiro-ubuntu-contexto.png)
 
-### 6. Mitigação de DoS com Paginação Segura (CWE-400)
-Aplicação de paginação defensiva com validação estrita de tipos e limites rígidos (`limit` e `offset`) parametrizados, prevenindo exaustão de recursos e ataques DoS.
+### 6. Diagnóstico de SQL Injection e Paginação Insegura
+Trecho do relatório do agente que identifica riscos de SQL Injection e consumo de recursos associados à falta de limites na paginação, com mapeamento de **CWE-89** e **CWE-400**. A imagem mostra o **diagnóstico**, não um teste que comprove a mitigação desses riscos.
 
-![Paginação Segura contra DoS](docs/evidencias/print-06-sqli-paginacao.png)
+![Diagnóstico de SQL Injection e Paginação Insegura](docs/evidencias/print-06-sqli-paginacao.png)
 
-### 7. Avaliação Hipotética de Risco e Análise de CVSS
-Demonstração de avaliação hipotética de risco fundamentada no pior cenário (*worst-case*), mantendo o compromisso técnico de avaliar o risco residual sem atribuir CVSS 0.0 de forma automática.
+### 7. Análise de Impacto e CVSS Hipotético
+Exemplo de avaliação da tríade CIA e estimativa de **CVSS 9.1** para um **cenário hipotético de produção**, dependente das premissas explicitadas pelo agente. A captura não demonstra um cálculo validado para o laboratório nem que o CVSS de uma aplicação tenha se tornado 0.0.
 
-![Avaliação Hipotética de Risco e CVSS](docs/evidencias/print-07-evidencias-cvss.png)
+![Análise Hipotética de Risco e CVSS](docs/evidencias/print-07-evidencias-cvss.png)
 
+**Limite das evidências:** os nove testes automatizados do laboratório cobrem SQL Injection, autenticação, buscas e entradas com caracteres especiais; **não incluem um teste dedicado aos limites de paginação**. As capturas das conversas demonstram o comportamento e as orientações do agente, não a implantação das soluções sugeridas.
 ---
 
 ## 🏗️ Arquitetura do Agente
